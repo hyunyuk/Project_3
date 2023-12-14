@@ -54,7 +54,7 @@
     <!-- D3 JavaScript -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
-                                <!-- Our JavaScript -->
+ <!-- ----------------------------------------- Our JavaScript ----------------------------------------- -->
     <script>
 
         // ------------------------------------------------------------------ //
@@ -181,9 +181,9 @@
                     // Create a marker and add it to the map
                     L.circleMarker([point.latitude, point.longitude], markerOption(point))
                         .addTo(childCareLocations)
-                        .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                            ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                            ${point.total_capacity}</p>`);
+                        .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                 }
             });
         }
@@ -199,54 +199,54 @@
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(licensedLocations)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
 
                     else if (point.facility_status === "Registration") {
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(registeredLocations)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
 
                     else if (point.facility_status === "Pending Revocation") {
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(pendingRevocationLocations)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
 
                     else if (point.facility_status === "Pending Denial") {
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(pendingDenialLocations)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
                     
                     else if (point.facility_status === "Pending Revocation and Denial") {
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(pendingRevocationANDDenial)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
 
                     else if (point.facility_status === "Suspended") {
                         // Create a marker and add it to the map
                         L.circleMarker([point.latitude, point.longitude], markerOption(point))
                             .addTo(suspendedLocations)
-                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p>County: 
-                                ${point.county}<br>Status: ${point.facility_status}<br>Total Capacity:
-                                ${point.total_capacity}</p>`);
+                            .bindPopup(`<h2>Facility Name: ${point.facility_name}</h2><hr><p><b>County:</b> 
+                            ${point.county}<br><b>Status:</b> ${point.facility_status }<br><b>Total Capacity:</b>
+                            ${point.total_capacity} <br><b>For More Info:</b> <a href = "${point.additional_information.url}"> Click Here</a></p>`);
                     }
                     
 

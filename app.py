@@ -6,10 +6,15 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     return (
-        f"/json <br/>"
-        f"/ny_map_and_chart <br/>"
+        f"Welcome To New York State's Child Care Services Homepage!<br/>"
+        f"----------------------------------------<br/>"
+        f"Available Routes:<br/>"
+        f"----------------------------------------<br/>"
+        f"<a href = 'http://127.0.0.1:5000/json'> JSON</a> <br/>"
+        f"<a href = 'http://127.0.0.1:5000/ny_map_and_chart'> NY Chart </a> <br/>"
+        f"<a href = 'http://127.0.0.1:5000/ny_map_detailed'> NYS Child Care Locations</a> <br/>"
         # f"/amanda_js <br/>"
-        # f"/alaa_js <br/>"
+
     )
 
 @app.route('/json')
@@ -24,6 +29,10 @@ def json_get():
 @app.route('/ny_map_and_chart')
 def charts():
     return render_template("tiffany.html")
+
+@app.route('/ny_map_detailed')
+def nyMap():
+    return render_template("alaa.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
