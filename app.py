@@ -13,7 +13,7 @@ def welcome():
         f"<a href = 'http://127.0.0.1:5000/json'> JSON</a> <br/>"
         f"<a href = 'http://127.0.0.1:5000/ny_map_and_chart'> NY Chart </a> <br/>"
         f"<a href = 'http://127.0.0.1:5000/ny_map_detailed'> NYS Child Care Locations</a> <br/>"
-        # f"/amanda_js <br/>"
+        f"<a href = 'http://127.0.0.1:5000//amanda_js'> NYS Child Care Summary</a> <br/>"
 
     )
 
@@ -33,6 +33,10 @@ def charts():
 @app.route('/ny_map_detailed')
 def nyMap():
     return render_template("alaa.html")
+
+@app.route('/amanda_js')
+def summary():
+    return render_template("amanda.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
