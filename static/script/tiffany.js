@@ -162,7 +162,7 @@ function addMarkers(data) {
 
             // Create a marker and add it to the county's layer group
             L.marker([parseFloat(point.latitude), parseFloat(point.longitude)])
-                .bindPopup(`<h3>Facility Name: ${point.facility_name}</h3><br><h4>County: ${county}</h4><br><h4>Status: ${point.facility_status}</h4>`)
+                .bindPopup(`<h3>Facility Name: ${point.facility_name}</h3><p><h4>County: ${county}</h4><p><h4>Status: ${point.facility_status}</h4>`)
                 .addTo(overlayMaps[county]); // Add to the corresponding LayerGroup
             console.log(`County: ${county}`);
         }
