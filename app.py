@@ -6,15 +6,13 @@ app = Flask(__name__)
 @app.route('/')
 def welcome():
     return (
-        f"Welcome To New York State's Child Care Services Homepage!<br/>"
+        f"Welcome to Child Care Providers in New York State!<br/>"
         f"----------------------------------------<br/>"
         f"Available Routes:<br/>"
         f"----------------------------------------<br/>"
         f"<a href = 'http://127.0.0.1:5000/json'> JSON</a> <br/>"
-        f"<a href = 'http://127.0.0.1:5000/ny_map_and_chart'> NY Chart </a> <br/>"
-        f"<a href = 'http://127.0.0.1:5000/ny_map_detailed'> NYS Child Care Locations</a> <br/>"
-        f"<a href = 'http://127.0.0.1:5000//amanda_js'> NYS Child Care Summary</a> <br/>"
-
+        f"<a href = 'http://127.0.0.1:5000/ny_state_level'> NY State Level Child Care Dashboard </a> <br/>"
+        f"<a href = 'http://127.0.0.1:5000/ny_county_level'> NY County Level Child Care Dashboard </a> <br/>"
     )
 
 @app.route('/json')
@@ -26,17 +24,15 @@ def json_get():
     # Return JSON data as JSONified Flask response
     return jsonify(data)
 
-@app.route('/ny_map_and_chart')
+@app.route('/ny_state_level')
 def charts():
-    return render_template("tiffany.html")
+    return render_template("ny_state.html")
 
-@app.route('/ny_map_detailed')
+@app.route('/ny_county_level')
 def nyMap():
-    return render_template("alaa.html")
+    return render_template("ny_county.html")
 
-@app.route('/amanda_js')
-def summary():
-    return render_template("amanda.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
+ 

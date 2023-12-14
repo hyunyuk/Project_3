@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New York State Child Care Facilities</title>
+
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Include Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Include D3.js -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- Include Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Include Masonry.js -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+</head>
+
+<!-- HTML Structure-->
+<body>
+  <div id="grid-container">
+      <!-- Container for the bar chart -->
+      <div id="bar-chart-container" class="item"> 
+        <div id="bar-chart"></div>
+      </div>
+      
+      <!-- Container for the Leaflet map -->
+      <div id="map-container" class="item">
+        <div id="map"></div>
+      </div>
+  </div>
+  <script src ="..\static\script\logic_ny_state.js"></script> 
+<!-- Initialize Masonry-->
+ <script>
+    $(document).ready(function () {
+        // Initialize Masonry
+        var $gridContainer = $('#grid-container');
+        $gridContainer.masonry({
+            // Masonry options (if needed)
+            itemSelector: '.item',
+            columnWidth: '.item',
+            // More options...
+        });
+            $gridContainer.masonry('layout');
+
+    });
+</script>
+ 
+</body>
+
+</html>
