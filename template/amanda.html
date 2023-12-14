@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Include D3.js -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script type="text/javascript" src ="amanda.js"></script>
+  <style>
+    body {
+        margin: 0; 
+        padding: 0; 
+    }
+  </style>
+</head>
+
+<body>
+   <h2>Child Care Capacities by County</h2>
+
+  <label for="countySelect">Select County:</label>
+  <select id="countySelect" onchange="updateCapacities(this.value)">
+    <!-- Options will be dynamically populated here -->
+  </select>
+
+  <h3>Capacities:</h3>
+  <ul id="capacitiesList">
+    <!-- Capacities will be dynamically populated here -->
+  </ul>
+</body>
+
+</html>
