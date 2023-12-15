@@ -1,78 +1,67 @@
-url="https://data.ny.gov/resource/fymg-3wv3.json"
-d3.json(url).then(function(data) {
+var url = "https://data.ny.gov/resource/fymg-3wv3.json";
+
+d3.json(url).then(function (data) {
     console.log(data[0].county);
-  });
-  
+    populateCountyOptions(data);
+    updateCapacities(data);
+});
 
-function init(){
-    let dropdownMenu = d3.select("#selDataset");
-    d3.json("https://data.ny.gov/resource/fymg-3wv3.json").then(function(data) {
-        
-        for (let i = 0; i <= data.length; i++){
-            let county_names = data[i].county;
-            console.log(county_names);
-            //use d3 to select dropdown menu
-            let dropdownMenu = document.getElementById('selDataset');
-            //use d3 to select dropdown menu
-            let option = document.createElement('option')
-           option.text=county_names;
-           option.value=county_names;
-           dropdownMenu.append(option);
+function populateCountyOptions(jsonData) {
+    var countySelect = d3.select("#countySelect"); 
+    var uniqueCounties = Array.from(new Set(jsonData.map(facility => facility.county)));
 
-        };
-    
-      
-        // Use the first sample from the list to build the initial plots
-        // let firstSample = county_names[0];
-        buildMetadata("Wayne");
+    uniqueCounties.forEach(function (county) {
+        countySelect
+            .append("option")
+            .attr("value", county)
+            .text(county);
     });
-};
 
-
-function buildMetadata(sample){
-    d3.json("https://data.ny.gov/resource/fymg-3wv3.json").then((data) => {
-    //retrieve counts of infant_capacity, toddler_capacity, total_capacity, 
-    //preschool_capacity, and school_age_capacity for each county
-    let infantCount = 0;
-    let toddlerCount=0;
-    let preschoolCount=0;
-    let schoolageCount=0;
-    let totalCount=0;
-
-    for (let i = 0; i <= 1; i++){
-        if (data[i].county == sample){
-            infantCount= infantCount+data[i].infant_capacity;
-            toddlerCount= toddlerCount+data[i].toddler_capacity;
-            preschoolCount=preschoolCount+data[i].preschool_capacity;
-            schoolageCount=schoolageCount+data[i].school_age_capacity;
-            totalCount=totalCount+data[i].total_capacity;
-        }
-        let value = data[i].county.find(function(item) {
-        return item.id == option;
-        });
-
-        console.log(value);
-        //Clear out metadata
-        d3.select("#sample-metadata").html("");
-
-        // Use Object.entries to add each key/value pair to the panel
-        Object.entries(valueData).forEach(([key,value]) => {
-    
-            // Log the individual key/value pairs as they are being appended to the metadata panel
-            console.log(key,value);
-        
-            let PANEL = d3.select("#sample-metadata");
-            
-            for (key in valueData){
-                PANEL.append("h5").text(`${key}: ${value}`)
-              };
-            });
-
-
-        }
-
+    countySelect.on("change", function () {
+        var newCounty = d3.select(this).property("value");
+        updateCapacities(newCounty, jsonData);
     });
-};
+}
 
-        
-init()   
+function updateCapacities(selectedCounty, jsonData) {
+    console.log("Updating capacities for county:", selectedCounty);
+    // Filter facilities based on the selected county
+    var countyFacilities = jsonData.filter(function (facility) {
+        return facility.county === selectedCounty;
+    });
+
+    // Calculate total capacities
+    var totalInfantCapacity = countyFacilities.reduce(function (sum, facility) {
+        return sum + parseInt(facility.infant_capacity);
+    }, 0);
+
+    var totalToddlerCapacity = countyFacilities.reduce(function (sum, facility) {
+        return sum + parseInt(facility.toddler_capacity);
+    }, 0);
+
+    var totalPreschoolCapacity = countyFacilities.reduce(function (sum, facility) {
+        return sum + parseInt(facility.preschool_capacity);
+    }, 0);
+
+    var totalSACCCapacity = countyFacilities.reduce(function (sum, facility) {
+        return sum + parseInt(facility.school_age_capacity);
+    }, 0);
+
+    var totalcapacity = countyFacilities.reduce(function (sum, facility) {
+        return sum + parseInt(facility.total_capacity);
+    }, 0);
+
+    // Update the list with total capacities
+    var capacitiesList = document.getElementById("capacitiesList");
+    capacitiesList.innerHTML = `
+        <li>Total Infant Capacity: ${totalInfantCapacity}</li>
+        <li>Total Toddler Capacity: ${totalToddlerCapacity}</li>
+        <li>Total Preschool Capacity: ${totalPreschoolCapacity}</li>
+        <li>Total SACC Capacity: ${totalSACCCapacity}</li>
+        <li>Total Capacity: ${totalcapacity}</li>
+    `;
+}
+
+function optionChanged(selectedCounty) {
+    //
+}
