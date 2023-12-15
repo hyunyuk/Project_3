@@ -1,6 +1,6 @@
 # Project_3
 
-In this project, we will focus on childcare providers based in New York.  Where is childcare located in NY State and what types of childcare are available where?  2017 was the last publication of this data for NY State, so updated, dynamic information is needed.
+In this project, we focused on childcare providers based in New York. The New York government contained a dataset about childcare facilities around New York. 2017 was the last publication of this data for NY State, so updated, dynamic information is needed.
 
 **State Level**
 
