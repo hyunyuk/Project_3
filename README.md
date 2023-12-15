@@ -29,3 +29,7 @@ This was a collaborative project between 4 data science students:
 #### Amanda K: krestamanda@gmail.com
 #### Tiffany Y: hsyuk0618@gmail.com
 #### Robin W: wilson.robin.leigh@gmail.com
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e02989c29307238803be5952238ff1385257b10
