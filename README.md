@@ -8,7 +8,7 @@ In this project, we will focus on childcare providers based in New York.  Where 
 **County Level**
 
 Plotly was used to looked at how many childcare facilities there are per county. We were able to find that Bronx had the most childcare facilities with 180 followed by Brooklyn with 132. 
-Leaflet was used to make it easier to look at specific counties and from there we can see the name of the childcare, the county it is in, and the status of the facility. 
+Leaflet was used to make a map of New York state so it was easier to look at specific counties and from there we can see the name of the childcare, the county it is in, and the status of the facility. 
 
 
 
@@ -25,8 +25,8 @@ Slidesgo Template: https://slidesgo.com/theme/kindergarten-rules-of-coexistence
 
 ## NOTE:
 This was a collaborative project between 4 data science students:
-Alaa A: alaaaleryani31@gmail.com
-Amanda K: krestamanda@gmail.com
-Tiffany Y: hsyuk0618@gmail.com
-Robin W: wilson.robin.leigh@gmail.com
+#### Alaa A: alaaaleryani31@gmail.com
+#### Amanda K: krestamanda@gmail.com
+#### Tiffany Y: hsyuk0618@gmail.com
+#### Robin W: wilson.robin.leigh@gmail.com
 
