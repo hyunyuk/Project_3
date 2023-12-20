@@ -9,7 +9,7 @@ In this project, we focused on childcare providers based in New York. The New Yo
 
 Plotly was used to looked at how many childcare facilities there are per county. We were able to find that Bronx had the most childcare facilities with 180 followed by Brooklyn with 132. 
 Leaflet was used to make a map of New York state so it was easier to look at specific counties and from there we can see the name of the childcare, the county it is in, and the status of the facility. 
-
+Additionally, a table with a dropdown menu was created to display the total facility capacity of each age group for each county in New York.
 
 
 ## **Google Slides Presentation:**
