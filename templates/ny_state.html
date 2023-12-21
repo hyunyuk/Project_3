@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New York State Child Care Facilities</title>
+  <h1><center>New York State Child Care Facilities</center></h1>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Include Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Include D3.js -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- Include Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Include jquery and Masonry.js -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+</head>
+
+<!-- HTML Structure-->
+<body>
+  
+  <div class="grid-container">
+    <div class="grid-sizer"></div>
+      
+    <!-- Container for the map of providers-->
+    <div class="grid-item">
+      <div id="map" style="height: 450px;"></div>
+    </div>
+
+    <!-- Container for the map of providers by status-->
+    <div class="grid-item">
+      <div id="map2" style="height: 450px;"></div>
+    </div>
+
+    <!-- Container for the bar chart of # providers by county-->
+    <div class="grid-item"> 
+      <div id="bar-chart" style="height: 300px;"></div>
+    </div>
+  
+    
+    
+    <!-- Container for County Summary table-->
+    <div class="grid-item">
+      <div id="summary" style="height: 100px;">
+        <h2>Child Care Capacities by County</h2>
+          <label for="countySelect">Select County:</label>
+          <select id="countySelect" onchange="updateCapacities(this.value)">
+            <!-- Options will be dynamically populated here -->
+          </select>
+          
+          <h3>Capacities:</h3>
+          <ul id="capacitiesList">
+            <!-- Capacities will be dynamically populated here -->
+          </ul>
+      </div>
+    </div>
+    
+  </div>
+<script src ="../static/logic_ny_state.js"></script> 
+</body>
+
+</html>
