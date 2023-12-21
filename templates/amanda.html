@@ -13,26 +13,58 @@
   <!-- Include D3.js -->
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script type="text/javascript" src ="./static/amanda.js"></script>
+  
+  
+  <!-- ----------------------------------------- Our CSS ----------------------------------------- -->
   <style>
     body {
-        margin: 0; 
-        padding: 0; 
+      background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+      color: black;
+    }
+
+    
+    /* Customize the Jumbotron - The background for the page header */
+    .jumbotron {
+      background: linear-gradient(0.25turn,  #f69d3c, #ebf8e1, #3f87a6);
     }
   </style>
+  <!-- ----------------------------------------- END CSS ----------------------------------------- -->
+
 </head>
 
 <body>
-   <h2>Child Care Capacities by County</h2>
+   <!-- <h2>Child Care Capacities by County</h2> -->
 
-  <label for="countySelect">Select County:</label>
-  <select id="countySelect" onchange="updateCapacities(this.value)">
-    <!-- Options will be dynamically populated here -->
-  </select>
+  <div class="col-md-12 jumbotron text-center">
+    <h1>NYS Child Care Capacities by County</h1>
+    <p>Use the interactive charts below to explore the dataset</p>
+  </div>
 
-  <h3>Capacities:</h3>
-  <ul id="capacitiesList">
+  
+  <div class="col-md-2">
+
+    <div class="well">
+      <h5>Select County:</h5>
+      <select id="countySelect" onchange="optionChanged(this.value)"></select> 
+    </div>
+
     <!-- Capacities will be dynamically populated here -->
-  </ul>
+    <!-- <h3>Capacities:</h3>
+    <ul id="capacitiesList"> </ul>
+     -->
+
+    <div class="panel panel-primary">
+
+      <div class="panel-heading">
+        <h3 class="panel-title">Capacities</h3>
+      </div>
+
+      <div id="capacitiesList" class="panel-body"></div> 
+
+    </div>
+
+  </div>
+
 </body>
 
 </html>
