@@ -2,9 +2,6 @@
 
 In this project, we focused on childcare providers based in New York. The New York government contained a dataset about childcare facilities around New York. 2017 was the last publication of this data for NY State, so updated, dynamic information is needed.
 
-**State Level**
-
-
 **County Level**
 
 Plotly was used to looked at how many childcare facilities there are per county. We were able to find that Bronx had the most childcare facilities with 180 followed by Brooklyn with 132. 
