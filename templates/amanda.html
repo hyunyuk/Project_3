@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- Include D3.js -->
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script type="text/javascript" src ="./static/amanda.js"></script>
+  <script type="text/javascript" src ="../static/amanda.js"></script>
   
   
   <!-- ----------------------------------------- Our CSS ----------------------------------------- -->
@@ -22,17 +22,24 @@
       color: black;
     }
 
-    
     /* Customize the Jumbotron - The background for the page header */
     .jumbotron {
       background: linear-gradient(0.25turn,  #f69d3c, #ebf8e1, #3f87a6);
+    }
+    
+    .panel-heading {
+      background: linear-gradient(0.25turn,  #3f87a6, #ebf8e1, #3f87a6);
+    }
+    .panel-title {
+      color: black;
     }
   </style>
   <!-- ----------------------------------------- END CSS ----------------------------------------- -->
 
 </head>
 
-<body>
+<body onload="defaultLoad()">
+
    <!-- <h2>Child Care Capacities by County</h2> -->
 
   <div class="col-md-12 jumbotron text-center">
@@ -44,7 +51,7 @@
   <div class="col-md-2">
 
     <div class="well">
-      <h5>Select County:</h5>
+      <h5>County:</h5>
       <select id="countySelect" onchange="optionChanged(this.value)"></select> 
     </div>
 

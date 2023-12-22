@@ -10,6 +10,8 @@ function populateCountyOptions(jsonData) {
     var countySelect = d3.select("#countySelect"); 
     var uniqueCounties = Array.from(new Set(jsonData.map(facility => facility.county)));
 
+    uniqueCounties.unshift("-- Select --");
+
     uniqueCounties.forEach(function (county) {
         countySelect
             .append("option")
@@ -64,4 +66,15 @@ function updateCapacities(selectedCounty, jsonData) {
 
 function optionChanged(selectedCounty) {
     //
+}
+
+function defaultLoad() {
+    var capacitiesList = document.getElementById("capacitiesList");
+    capacitiesList.innerHTML = `
+        <li>Total Infant Capacity: 0</li>
+        <li>Total Toddler Capacity: 0</li>
+        <li>Total Preschool Capacity: 0</li>
+        <li>Total SACC Capacity: 0</li>
+        <li>Total Capacity: 0</li>
+    `;
 }
