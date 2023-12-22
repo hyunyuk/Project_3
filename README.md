@@ -15,6 +15,8 @@ In python, we utilized the flask app (app.py) to create various routes as follow
 
 Alternately, we utilized the Javascript library, Masonry, to create a dashboard of the same visuals through HTML (ny_state.html), CSS (style.css) and Javascript (logic_ny_state).
 
+The data has also been stored in a SQL database to simplify future enhancements to this project.
+
 ## **Google Slides Presentation:**
 https://docs.google.com/presentation/d/1s-7oZZPfccYcGE_V4o2IPUj2uxaU7NQUHrschXWlx7U/edit#slide=id.g2494126b58c_0_0
 
